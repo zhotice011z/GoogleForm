@@ -21,7 +21,7 @@
                     <input type="range" id="slider" min="0" max="255" value="128" class="sldR"><br>
                     <input type="range" id="slider" min="0" max="255" value="128" class="sldG"><br>
                     <input type="range" id="slider" min="0" max="255" value="128" class="sldB"><br>
-                </div>            
+                </div>
             </div>
         </form>
 
@@ -30,16 +30,13 @@
             var green = document.getElementsByClassName("sldG")[0];
             var blue = document.getElementsByClassName("sldB")[0];
             var boxbg = document.getElementById("acolorBox").style;
-
-            red.oninput = function (){
+		
+	    function updateBox(){
                 boxbg.backgroundColor = "rgb("+red.value+","+green.value+","+blue.value+")";
             }
-            green.oninput = function (){
-                boxbg.backgroundColor = "rgb("+red.value+","+green.value+","+blue.value+")";
-            }
-            blue.oninput = function (){
-                boxbg.backgroundColor = "rgb("+red.value+","+green.value+","+blue.value+")";
-            }
+            red.oninput = updateBox(); 
+            green.oninput = updateBox();
+	    blue.oninput = updateBox();
         </script>
 	</body>
 </html>
